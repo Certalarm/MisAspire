@@ -12,8 +12,14 @@
 
 ### Что сделано
 Всё согласно ТЗ.
+
+
 Обработка исключений через интерфейс `IExceptionHandler`.
+
+
 Хранение данных в `PostgreSQL`.
+
+
 Логирование настроено через `Log4Net`, в папке с `MisAspire.WebAPI.dll`
 Путь к логам (для Debug):
 ```text
@@ -22,6 +28,8 @@
 Дополнительно добавлены сущности:
 - Болезни Пациента (Patient_Disease)
 - Прием (Appointment)
+
+
 База данных (если пустая) заполняется данными из файла `MisContextExtensions.cs`.
 
 ### Структура решения
@@ -58,7 +66,7 @@ MisAspire/
 ```
 
 ### Схема Базы Данных
-
+[](https://github.com/Certalarm/MisAspire/blob/master/_assets/BD_diagram.png)
 
 ### Запуск приложения
 ```bash
