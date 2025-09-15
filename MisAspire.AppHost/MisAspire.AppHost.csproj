@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.4.2" />
+
+  <PropertyGroup>
+	<CETCompat>false</CETCompat>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>03067fed-19f0-48d9-9d50-64832a125561</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.4.2" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.4.2" />
+    <PackageReference Include="log4net" Version="3.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MisAspire.Domain\MisAspire.Domain.csproj" />
+    <ProjectReference Include="..\MisAspire.Persistence\MisAspire.Persistence.csproj" />
+    <ProjectReference Include="..\MisAspire.WebAPI\MisAspire.WebAPI.csproj" />
+  </ItemGroup>
+
+</Project>
