@@ -66,7 +66,7 @@ MisAspire/
 ```
 
 ### Схема Базы Данных
-[](https://github.com/Certalarm/MisAspire/blob/master/_assets/BD_diagram.png)
+![[https://github.com/Certalarm/MisAspire/blob/master/_assets/BD_diagram.png]]
 
 ### Запуск приложения
 ```bash
