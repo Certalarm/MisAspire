@@ -49,7 +49,7 @@ MisAspire/
 │	│	└── MisContext.cs
 │	├── Extensions/
 │	│	└── MisContextExtensions.cs
-│	└── Migtarions/
+│	└── Migrations/
 │		├── 20250915032945_Init.cs
 │		├── 20250915032945_Init.Designer.cs
 │		└── MisContextModelSnapshot.cs
