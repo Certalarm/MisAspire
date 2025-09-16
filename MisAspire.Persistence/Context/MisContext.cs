@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MisAspire.Domain.Entity;
 using static MisAspire.Persistence.Extensions.MisContextExtensions;
 
@@ -6,7 +7,7 @@ namespace MisAspire.Persistence.Context
 {
     public class MisContext: DbContext
     {
-        private const string ConnectionString = "Host=localhost;Database=misDB;Username=postgres;Password=grespost;Port=5432";
+        protected IConfiguration _configuration;
 
         public DbSet<Patient> Patients => Set<Patient>();
         public DbSet<Doctor> Doctors =>  Set<Doctor>();
@@ -15,19 +16,16 @@ namespace MisAspire.Persistence.Context
         public DbSet<Appointment> Appointments => Set<Appointment>();
 
         #region .ctors
-        public MisContext() : base()
+        public MisContext(DbContextOptions<MisContext> options, IConfiguration configuration) : base(options)
         {
-        }
-
-        public MisContext(DbContextOptions<MisContext> options) : base(options)
-        {
+            _configuration = configuration;
         }
         #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseNpgsql(ConnectionString)
+                .UseNpgsql(_configuration.GetConnectionString("DefaultConnection"))
                 .UseSeeding((context, _) =>
                     ((MisContext)context).SeedStartData());
         }
